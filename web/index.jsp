@@ -1,0 +1,30 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Mikołaj Klonowski
+  Date: 2018-07-04
+  Time: 17:17
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+  <head>
+    <title>Kalkulator wag i miar</title>
+  </head>
+  <body>
+  <h1>Przelicznik metryczny</h1>
+  <form method="post" action="kalkulator" ><br>
+    <input type="text" name="metry" ><br>
+    <input type="text" name="centymetry" ><br>
+    <input type="text" name="milimetry"><br>
+    <input type="submit" value="Przelicz">
+  </form>
+  <h2>Przelicznik wag</h2>
+  <form method="post" action="kalkulator"><br>
+
+    <input type="text" name="kilogramy" ><br>
+    <input type="text" name="gramy"><br>
+    <input type="text" name="miligramy"><br>
+    <input type="submit" value="Przelicz">
+  </form>
+  </body>
+</html>
