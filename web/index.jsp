@@ -13,18 +13,18 @@
   <body>
   <h1>Przelicznik metryczny</h1>
   <form method="post" action="kalkulator" ><br>
-    <input type="text" name="metry" ><br>
-    <input type="text" name="centymetry" ><br>
-    <input type="text" name="milimetry"><br>
-    <input type="submit" value="Przelicz">
+    <input type="text" name="metry" placeholder="metry" ><br>
+    <input type="text" name="centymetry" placeholder="centymetry"><br>
+    <input type="text" name="milimetry" placeholder="milimetry"><br>
+    <input type="submit" value="Przelicz" >
   </form>
-  <h2>Przelicznik wag</h2>
+  <h1>Przelicznik wag</h1>
   <form method="post" action="kalkulator"><br>
 
-    <input type="text" name="kilogramy" ><br>
-    <input type="text" name="gramy"><br>
-    <input type="text" name="miligramy"><br>
-    <input type="submit" value="Przelicz">
+    <input type="text" name="kilogramy" placeholder="kilogramy"><br>
+    <input type="text" name="gramy" placeholder="gramy"><br>
+    <input type="text" name="miligramy" placeholder="miligramy"><br>
+    <input type="submit" value="Przelicz" >
   </form>
   </body>
 </html>

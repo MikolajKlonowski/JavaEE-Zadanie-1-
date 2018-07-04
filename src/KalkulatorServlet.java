@@ -17,16 +17,16 @@ public class KalkulatorServlet extends HttpServlet {
         String miligramy = request.getParameter("miligramy");
         Obliczenia o = new Obliczenia();
         PrintWriter printWriter = response.getWriter();
-        if (o.sprawdzeniePodanychWartosci(kilogramy,gramy,miligramy,metry,milimetry,centymetry)){
-            if (metry != null || centymetry != null || milimetry != null) {
-                printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));
-            } else {
-                printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
-            }
-        }else {
+        if (o.sprawdzeniePodanychWartosciDlugosci(metry, milimetry, centymetry)) {
+            printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));
+        } else if (o.sprawdzeniePodanychWartosciMasy(kilogramy, gramy, miligramy)) {
+            printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
+        } else
+        {
             response.getWriter().print("Podałeś złą liczbe");
 
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
