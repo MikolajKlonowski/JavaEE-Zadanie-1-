@@ -7,47 +7,47 @@ public class Obliczenia {
     private Double cm;
     private Double mm;
 
-//    public boolean sprawdzeniePodanychWartosciDlugosci(String metry, String milimetry, String centymetry) {
-//        if ((metry)) {
-//            m = Double.valueOf(metry);
-//            if (m < 0)
-//
-//                return false;
-//        } else if (!centymetry.isEmpty()) {
-//            cm = Double.valueOf(centymetry);
-//            if (cm < 0)
-//                return false;
-//        } else if (!milimetry.isEmpty()) {
-//            mm = Double.valueOf(milimetry);
-//            if (mm < 0)
-//                return false;
-//        } else
-//            return false;
-//
-//
-//        return true;
-//    }
+    public boolean sprawdzeniePodanychWartosciDlugosci(String metry, String milimetry, String centymetry) {
+        if ((metry!=null && !"".equals(metry))) {
+            m = Double.valueOf(metry);
+            if (m < 0)
 
-//    public boolean sprawdzeniePodanychWartosciMasy(String kilogramy, String gramy, String miligramy) {
-//        if (!kilogramy.isEmpty() ) {
-//            kg = Double.valueOf(kilogramy);
-//            if (kg < 0)
-//                return false;
-//        } else if (!gramy.isEmpty() ) {
-//            g = Double.valueOf(gramy);
-//            if (g < 0)
-//                return false;
-//        } else if (!miligramy.isEmpty()) {
-//            mg = Double.valueOf(miligramy);
-//            if (mg < 0)
-//                return false;
-//        } else {
-//            return false;
-//        }
-//
-//
-//        return true;
-//    }
+                return false;
+        } else if (centymetry!=null && !"".equals(centymetry)) {
+            cm = Double.valueOf(centymetry);
+            if (cm < 0)
+                return false;
+        } else if (milimetry!=null && !"".equals(milimetry)) {
+            mm = Double.valueOf(milimetry);
+            if (mm < 0)
+                return false;
+        } else
+            return false;
+
+
+        return true;
+    }
+
+    public boolean sprawdzeniePodanychWartosciMasy(String kilogramy, String gramy, String miligramy) {
+        if (kilogramy!=null &&!"".equals(kilogramy) ) {
+            kg = Double.valueOf(kilogramy);
+            if (kg < 0)
+                return false;
+        } else if (gramy!=null&&!"".equals(gramy)) {
+            g = Double.valueOf(gramy);
+            if (g < 0)
+                return false;
+        } else if (miligramy!=null&& !"".equals(miligramy)) {
+            mg = Double.valueOf(miligramy);
+            if (mg < 0)
+                return false;
+        } else {
+            return false;
+        }
+
+
+        return true;
+    }
 
     public String obliczeniaWag(String kilogramy, String gramy, String miligramy) {
         System.out.println("Przeliczono wartość miar");

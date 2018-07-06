@@ -17,16 +17,23 @@ public class KalkulatorServlet extends HttpServlet {
         String miligramy = request.getParameter("miligramy");
         Obliczenia o = new Obliczenia();
         PrintWriter printWriter = response.getWriter();
-//        if (o.sprawdzeniePodanychWartosciDlugosci(metry, milimetry, centymetry)) {
-        if (kilogramy==null||gramy==null||miligramy==null){
-            printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));}
-            else if (metry==null||centymetry==null||milimetry==null)
 
-//        if (o.sprawdzeniePodanychWartosciMasy(kilogramy, gramy, miligramy)) {
-            printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
-//        }
+        if (kilogramy == null || gramy == null || miligramy == null) {
+            if (o.sprawdzeniePodanychWartosciDlugosci(metry, milimetry, centymetry)) {
+                printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));
+            }else
+                response.getWriter().print("Podales zla liczbe");
+        } else if (metry == null || centymetry == null || milimetry == null) {
+            if (o.sprawdzeniePodanychWartosciMasy(kilogramy, gramy, miligramy)) {
+                printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
+            }else
+                response.getWriter().print("Podales zla liczbe");
+        }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+
     }
 }
+
