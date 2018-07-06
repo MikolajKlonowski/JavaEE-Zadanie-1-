@@ -18,18 +18,15 @@ public class KalkulatorServlet extends HttpServlet {
         Obliczenia o = new Obliczenia();
         PrintWriter printWriter = response.getWriter();
 
-        if (kilogramy == null || gramy == null || miligramy == null) {
-            if (o.sprawdzeniePodanychWartosciDlugosci(metry, milimetry, centymetry)) {
-                printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));
-            }else
-                response.getWriter().print("Podales zla liczbe");
-        } else if (metry == null || centymetry == null || milimetry == null) {
-            if (o.sprawdzeniePodanychWartosciMasy(kilogramy, gramy, miligramy)) {
-                printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
-            }else
-                response.getWriter().print("Podales zla liczbe");
-        }
+
+        if (o.sprawdzeniePodanychWartosciDlugosci(metry, milimetry, centymetry)) {
+            printWriter.print(o.obliczeniaMiar(metry, centymetry, milimetry));
+        } else if (o.sprawdzeniePodanychWartosciMasy(kilogramy, gramy, miligramy)) {
+            printWriter.print(o.obliczeniaWag(kilogramy, gramy, miligramy));
+        } else
+            response.getWriter().print("podales zla liczbe");
     }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
